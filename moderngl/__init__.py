@@ -27,7 +27,7 @@ class Buffer:
         self.mglo = None
         self._size = None
         self._dynamic = None
-        self._glo = None
+        self._g_lo = None
         self.ctx = None
         self.extra = None
         raise TypeError()
@@ -51,7 +51,7 @@ class Buffer:
 
     @property
     def glo(self):
-        return self._glo
+        return self._g_lo
 
     def write(self, data, offset=0):
         self.mglo.write(data, offset)
@@ -140,7 +140,7 @@ class ComputeShader:
     def __init__(self):
         self.mglo = None
         self._members = {}
-        self._glo = None
+        self._g_lo = None
         self.ctx = None
         self.extra = None
         raise TypeError()
@@ -165,7 +165,7 @@ class ComputeShader:
 
     @property
     def glo(self):
-        return self._glo
+        return self._g_lo
 
     def run(self, group_x=1, group_y=1, group_z=1):
         return self.mglo.run(group_x, group_y, group_z)
@@ -189,7 +189,7 @@ class Framebuffer:
         self._depth_attachment = None
         self._size = (None, None)
         self._samples = None
-        self._glo = None
+        self._g_lo = None
         self.ctx = None
         self._is_reference = None
         self.extra = None
